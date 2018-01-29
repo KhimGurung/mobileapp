@@ -158,7 +158,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="gCH-Ar-Rtc">
-                                <rect key="frame" x="0.0" y="0.0" width="500" height="366"/>
+                                <rect key="frame" x="0.0" y="0.0" width="500" height="368"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="whitebg" translatesAutoresizingMaskIntoConstraints="NO" id="WIQ-QD-gA3">
@@ -200,6 +200,53 @@
                 <exit id="Rn4-YT-bhP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="951.5625" y="28.710937499999996"/>
+        </scene>
+        <!--Game End View Controller-->
+        <scene sceneID="dWK-Ff-21B">
+            <objects>
+                <viewController storyboardIdentifier="33" definesPresentationContext="YES" modalPresentationStyle="formSheet" id="kxT-NK-Rnd" customClass="GameEndViewController" customModule="mobileapp_tetris" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1ut-4p-KzF">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="hpF-5c-Avh">
+                                <rect key="frame" x="152" y="354" width="489" height="316"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="whitebg" translatesAutoresizingMaskIntoConstraints="NO" id="HcL-gM-dwm">
+                                <rect key="frame" x="265" y="426" width="236" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QSs-JE-VvW">
+                                <rect key="frame" x="277" y="435" width="209" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <state key="normal" title="PLAY AGAIN"/>
+                                <connections>
+                                    <action selector="popupTap:" destination="Rn4-YT-bhP" eventType="touchUpInside" id="hUD-Lp-U2G"/>
+                                    <action selector="popupTap:" destination="ExV-sL-me2" eventType="touchUpInside" id="hXt-6w-tkp"/>
+                                    <action selector="tapResume:" destination="Rn4-YT-bhP" eventType="touchUpInside" id="w72-6y-82M"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="whitebg" translatesAutoresizingMaskIntoConstraints="NO" id="ZFa-D4-DkD">
+                                <rect key="frame" x="301" y="532" width="162" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3IR-dn-5C1">
+                                <rect key="frame" x="296" y="542" width="182" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <state key="normal" title="HOME"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="XYN-Ha-4bT"/>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="500" height="300"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q7j-Cu-luC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1577.34375" y="28.710937499999996"/>
         </scene>
     </scenes>
     <resources>

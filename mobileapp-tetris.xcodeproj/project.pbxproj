@@ -27,6 +27,7 @@
 		2B071C0720122E5C002B6F6B /* SShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B071C0620122E5C002B6F6B /* SShape.swift */; };
 		2B071C0920122E97002B6F6B /* LShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B071C0820122E97002B6F6B /* LShape.swift */; };
 		2B071C0B20124749002B6F6B /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B071C0A20124749002B6F6B /* GameLogic.swift */; };
+		2B0EA879201F972300B8BBF8 /* GameEndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0EA878201F972300B8BBF8 /* GameEndViewController.swift */; };
 		2BF613DD201F42F30013F43D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF613DC201F42F30013F43D /* HomeViewController.swift */; };
 		2BF613E1201F64BB0013F43D /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF613E0201F64BB0013F43D /* PopupViewController.swift */; };
 /* End PBXBuildFile section */
@@ -75,6 +76,7 @@
 		2B071C0620122E5C002B6F6B /* SShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SShape.swift; sourceTree = "<group>"; };
 		2B071C0820122E97002B6F6B /* LShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LShape.swift; sourceTree = "<group>"; };
 		2B071C0A20124749002B6F6B /* GameLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLogic.swift; sourceTree = "<group>"; };
+		2B0EA878201F972300B8BBF8 /* GameEndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEndViewController.swift; sourceTree = "<group>"; };
 		2BF613DC201F42F30013F43D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2BF613E0201F64BB0013F43D /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,6 +136,7 @@
 				2B071BCA20122594002B6F6B /* GameViewController.swift */,
 				2BF613DC201F42F30013F43D /* HomeViewController.swift */,
 				2BF613E0201F64BB0013F43D /* PopupViewController.swift */,
+				2B0EA878201F972300B8BBF8 /* GameEndViewController.swift */,
 				2B071BCC20122594002B6F6B /* Main.storyboard */,
 				2B071BCF20122594002B6F6B /* Assets.xcassets */,
 				2B071BD120122594002B6F6B /* LaunchScreen.storyboard */,
@@ -328,6 +331,7 @@
 				2B071BCB20122594002B6F6B /* GameViewController.swift in Sources */,
 				2B071C0920122E97002B6F6B /* LShape.swift in Sources */,
 				2B071BC320122594002B6F6B /* AppDelegate.swift in Sources */,
+				2B0EA879201F972300B8BBF8 /* GameEndViewController.swift in Sources */,
 				2B071BFD20122880002B6F6B /* JShape.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

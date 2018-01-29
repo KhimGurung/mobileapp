@@ -15,7 +15,9 @@ class GameViewController: UIViewController, UIGestureRecognizerDelegate, GameLog
         view.isUserInteractionEnabled = false
         scene.stopTicking()
         scene.animateCollapsingLines(linesToRemove: gamelogic.removeAllBlocks(), fallenBlocks: gamelogic.removeAllBlocks()) {
-            gamelogic.gameStart()
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let secondViewController = storyboard.instantiateViewController(withIdentifier: "gameendViewControllerId") as! GameEndViewController
+            self.present(secondViewController, animated: true, completion: nil)
         }
     }
     
