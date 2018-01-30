@@ -230,8 +230,7 @@ class GameLogic {
             return false
         }
         for bottomBlock in shape.bottomBlocks {
-            if bottomBlock.row == NumRows - 1
-                || blockArray[bottomBlock.column, bottomBlock.row + 1] != nil {
+            if bottomBlock.row == NumRows - 1 || blockArray[bottomBlock.column, bottomBlock.row + 1] != nil {
                 return true
             }
         }
@@ -247,7 +246,6 @@ class GameLogic {
         var removedLines = Array<Array<Block>>()
         for row in (1..<NumRows).reversed() {
             var rowOfBlocks = Array<Block>()
-
             for column in 0..<NumColumns {
                 guard let block = blockArray[column, row] else {
                     continue
@@ -276,15 +274,11 @@ class GameLogic {
         var fallenBlocks = Array<Array<Block>>()
         for column in 0..<NumColumns {
             var fallenBlocksArray = Array<Block>()
-            // #14
             for row in (1..<removedLines[0][0].row).reversed() {
                 guard let block = blockArray[column, row] else {
                     continue
                 }
-                var newRow = row
-                while (newRow < NumRows - 1 && blockArray[column, newRow + 1] == nil) {
-                    newRow += 1
-                }
+                let newRow = row + removedLines.count
                 block.row = newRow
                 blockArray[column, row] = nil
                 blockArray[column, newRow] = block

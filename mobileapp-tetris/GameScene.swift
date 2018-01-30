@@ -85,16 +85,11 @@ class GameScene: SKScene {
     func addPreviewShapeToScene(shape:Shape, completion:@escaping () -> ()) {
         for block in shape.blocks {
             var texture = textureCache[block.spriteName]
-            if texture == nil {
-                texture = SKTexture(imageNamed: block.spriteName)
-                textureCache[block.spriteName] = texture
-            }
+            texture = SKTexture(imageNamed: block.spriteName)
             let sprite = SKSpriteNode(texture: texture)
-            sprite.position = pointForColumn(column: block.column, row:block.row - 2)
             shapeLayer.addChild(sprite)
             block.sprite = sprite
             
-            // Animation
             sprite.alpha = 0
             let moveAction = SKAction.move(to: pointForColumn(column: block.column, row: block.row), duration: TimeInterval(0.2))
             moveAction.timingMode = .easeOut
@@ -150,26 +145,14 @@ class GameScene: SKScene {
         
         for rowToRemove in linesToRemove {
             for block in rowToRemove {
-                let randomRadius = CGFloat(UInt(arc4random_uniform(400) + 100))
-                let goLeft = arc4random_uniform(100) % 2 == 0
-                
                 var point = pointForColumn(column: block.column, row: block.row)
-                point = CGPoint(x: point.x + (goLeft ? -randomRadius : randomRadius), y: point.y)
-                let randomDuration = TimeInterval(arc4random_uniform(2)) + 0.5
-                var startAngle = CGFloat(Double.pi)
-                var endAngle = startAngle * 2
-                if goLeft {
-                    endAngle = startAngle
-                    startAngle = 0
-                }
-                let archPath = UIBezierPath(arcCenter: point, radius: randomRadius, startAngle: startAngle, endAngle: endAngle, clockwise: goLeft)
-                let archAction = SKAction.follow(archPath.cgPath, asOffset: false, orientToPath: true, duration: randomDuration)
-                archAction.timingMode = .easeIn
+                point = CGPoint(x: point.x , y: point.y)
+                let archPath = UIBezierPath(arcCenter: point, radius: 0, startAngle: 0, endAngle: 0, clockwise: true)
+                let archAction = SKAction.follow(archPath.cgPath, asOffset: false, orientToPath: true, duration: 0)
                 let sprite = block.sprite!
-                sprite.zPosition = 100
                 sprite.run(
                     SKAction.sequence(
-                        [SKAction.group([archAction, SKAction.fadeOut(withDuration: TimeInterval(randomDuration))]), SKAction.removeFromParent()]))
+                        [SKAction.group([archAction, SKAction.moveBy(x: 600.0,y: 0.0,duration: 0.3)]), SKAction.removeFromParent()]))
             }
         }
         run(SKAction.wait(forDuration: longestDuration), completion:completion)

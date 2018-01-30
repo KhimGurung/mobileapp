@@ -171,8 +171,9 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                 <state key="normal" title="RESUME"/>
                                 <connections>
-                                    <action selector="popupTap:" destination="ExV-sL-me2" eventType="touchUpInside" id="Bra-SP-JDR"/>
                                     <action selector="popupTap:" destination="Rn4-YT-bhP" eventType="touchUpInside" id="SuX-0X-AUi"/>
+                                    <action selector="popupTap:" destination="ExV-sL-me2" eventType="touchUpInside" id="sRy-f8-zgp"/>
+                                    <action selector="resumegame:" destination="Rn4-YT-bhP" eventType="touchUpInside" id="32Q-iJ-bES"/>
                                     <action selector="tapResume:" destination="Rn4-YT-bhP" eventType="touchUpInside" id="xq9-MI-Lac"/>
                                 </connections>
                             </button>
@@ -204,13 +205,13 @@
         <!--Game End View Controller-->
         <scene sceneID="dWK-Ff-21B">
             <objects>
-                <viewController storyboardIdentifier="33" definesPresentationContext="YES" modalPresentationStyle="formSheet" id="kxT-NK-Rnd" customClass="GameEndViewController" customModule="mobileapp_tetris" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="gameendVC" definesPresentationContext="YES" providesPresentationContextTransitionStyle="YES" id="kxT-NK-Rnd" customClass="GameEndViewController" customModule="mobileapp_tetris" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1ut-4p-KzF">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="hpF-5c-Avh">
-                                <rect key="frame" x="152" y="354" width="489" height="316"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="gdy-iY-IZc">
+                                <rect key="frame" x="124" y="340" width="503" height="338"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="whitebg" translatesAutoresizingMaskIntoConstraints="NO" id="HcL-gM-dwm">
@@ -221,30 +222,48 @@
                                 <rect key="frame" x="277" y="435" width="209" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
-                                <state key="normal" title="PLAY AGAIN"/>
+                                <state key="normal" title="PLAY AGAIN">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="popupTap:" destination="Rn4-YT-bhP" eventType="touchUpInside" id="hUD-Lp-U2G"/>
-                                    <action selector="popupTap:" destination="ExV-sL-me2" eventType="touchUpInside" id="hXt-6w-tkp"/>
                                     <action selector="tapResume:" destination="Rn4-YT-bhP" eventType="touchUpInside" id="w72-6y-82M"/>
+                                    <segue destination="BV1-FR-VrT" kind="show" id="uS3-Vz-54s"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="whitebg" translatesAutoresizingMaskIntoConstraints="NO" id="ZFa-D4-DkD">
                                 <rect key="frame" x="301" y="532" width="162" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3IR-dn-5C1">
-                                <rect key="frame" x="296" y="542" width="182" height="54"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3IR-dn-5C1">
+                                <rect key="frame" x="273" y="539" width="212" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
-                                <state key="normal" title="HOME"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                <state key="normal" title="HOME">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="fJX-4T-bmB" kind="show" id="aMK-Uv-CB5"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="XYN-Ha-4bT"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="dYB-Jd-ifZ" appends="YES" id="wi7-oU-esS"/>
+                        </connections>
                     </view>
                     <value key="contentSizeForViewInPopover" type="size" width="500" height="300"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q7j-Cu-luC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="dYB-Jd-ifZ">
+                    <connections>
+                        <action selector="didTap:" destination="kxT-NK-Rnd" id="6l7-ae-Ohg"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1577.34375" y="28.710937499999996"/>
         </scene>
@@ -255,4 +274,8 @@
         <image name="homebackground" width="479" height="800"/>
         <image name="whitebg" width="84" height="100"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="FNp-1A-wTt"/>
+        <segue reference="uS3-Vz-54s"/>
+    </inferredMetricsTieBreakers>
 </document>

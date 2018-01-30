@@ -10,10 +10,13 @@ import UIKit
 
 class PopupViewController: UIViewController {
 
-    @IBAction func popupTap(_ sender: Any) {
+    var gamelogic: GameLogic!
+    var scene: GameScene!
+    var gameVC: GameViewController?
+    @IBAction func popupTap(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
+        //gameVC?.didTick()
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

@@ -15,9 +15,13 @@ class GameViewController: UIViewController, UIGestureRecognizerDelegate, GameLog
         view.isUserInteractionEnabled = false
         scene.stopTicking()
         scene.animateCollapsingLines(linesToRemove: gamelogic.removeAllBlocks(), fallenBlocks: gamelogic.removeAllBlocks()) {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let secondViewController = storyboard.instantiateViewController(withIdentifier: "gameendViewControllerId") as! GameEndViewController
-            self.present(secondViewController, animated: true, completion: nil)
+            if let presentedViewController = self.storyboard?.instantiateViewController(withIdentifier: "gameendVC") {
+                presentedViewController.providesPresentationContextTransitionStyle = true
+                presentedViewController.definesPresentationContext = true
+                presentedViewController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext;
+                presentedViewController.view.backgroundColor = UIColor.init(white: 0.4, alpha: 0.5)
+                self.present(presentedViewController, animated: true, completion: nil)
+            }
         }
     }
     
@@ -50,7 +54,6 @@ class GameViewController: UIViewController, UIGestureRecognizerDelegate, GameLog
         if removedLines.linesRemoved.count > 0 {
             self.scoreLabel.text = "\(gamelogic.score)"
             scene.animateCollapsingLines(linesToRemove: removedLines.linesRemoved, fallenBlocks:removedLines.fallenBlocks) {
-                // #11
                 self.gameShapeDidLand(gamelogic: gamelogic)
             }
 
@@ -150,6 +153,7 @@ class GameViewController: UIViewController, UIGestureRecognizerDelegate, GameLog
         performSegue(withIdentifier: "showPopup", sender: self)
 
     }
+    
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
