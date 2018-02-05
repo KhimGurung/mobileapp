@@ -128,7 +128,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vj3-Ck-l45">
-                                <rect key="frame" x="195" y="414" width="379" height="163"/>
+                                <rect key="frame" x="195" y="536" width="379" height="89"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="90"/>
                                 <state key="normal" title="PLAY">
@@ -140,10 +140,49 @@
                                     <segue destination="BV1-FR-VrT" kind="show" identifier="showGameBoard" id="wNG-LO-J8V"/>
                                 </connections>
                             </button>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blue" translatesAutoresizingMaskIntoConstraints="NO" id="nLZ-XC-02v">
+                                <rect key="frame" x="77" y="408" width="63" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="orange" translatesAutoresizingMaskIntoConstraints="NO" id="0zP-VY-7nr">
+                                <rect key="frame" x="191" y="408" width="63" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="purple" translatesAutoresizingMaskIntoConstraints="NO" id="SSb-fG-vJS">
+                                <rect key="frame" x="304" y="408" width="63" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="red" translatesAutoresizingMaskIntoConstraints="NO" id="26E-KK-Iqa">
+                                <rect key="frame" x="414" y="408" width="63" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="teal" translatesAutoresizingMaskIntoConstraints="NO" id="HTR-qc-Y4r">
+                                <rect key="frame" x="524" y="408" width="63" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yellow" translatesAutoresizingMaskIntoConstraints="NO" id="lFU-qF-Vlc">
+                                <rect key="frame" x="639" y="408" width="63" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SELECT COLOR FOR TETROMINO " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="594-GU-bGz">
+                                <rect key="frame" x="171" y="348" width="439" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <color key="textColor" red="0.58206950980000005" green="1" blue="0.20108064680000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="vEA-Eg-2uP"/>
                     </view>
+                    <connections>
+                        <outlet property="blueTap" destination="nLZ-XC-02v" id="4PJ-py-Fet"/>
+                        <outlet property="orangeTap" destination="0zP-VY-7nr" id="MaX-Tj-bIJ"/>
+                        <outlet property="purpleTap" destination="SSb-fG-vJS" id="ryT-8A-tMN"/>
+                        <outlet property="redTap" destination="26E-KK-Iqa" id="03b-Xv-e2m"/>
+                        <outlet property="tealTap" destination="HTR-qc-Y4r" id="2g1-WU-BnA"/>
+                        <outlet property="yellowTap" destination="lFU-qF-Vlc" id="Yku-fE-PPY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Rz-Qx-LD1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -270,12 +309,18 @@
     </scenes>
     <resources>
         <image name="background" width="160" height="284"/>
+        <image name="blue" width="40" height="40"/>
         <image name="cube-1678974_960_720 Kopie" width="600" height="315"/>
         <image name="homebackground" width="479" height="800"/>
+        <image name="orange" width="40" height="40"/>
+        <image name="purple" width="40" height="40"/>
+        <image name="red" width="40" height="40"/>
+        <image name="teal" width="40" height="40"/>
         <image name="whitebg" width="84" height="100"/>
+        <image name="yellow" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FNp-1A-wTt"/>
-        <segue reference="uS3-Vz-54s"/>
+        <segue reference="aMK-Uv-CB5"/>
+        <segue reference="wNG-LO-J8V"/>
     </inferredMetricsTieBreakers>
 </document>

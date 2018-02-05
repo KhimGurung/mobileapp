@@ -84,13 +84,12 @@ class GameScene: SKScene {
     
     func addPreviewShapeToScene(shape:Shape, completion:@escaping () -> ()) {
         for block in shape.blocks {
-            var texture = textureCache[block.spriteName]
-            texture = SKTexture(imageNamed: block.spriteName)
+            let texture = SKTexture(imageNamed: block.blockColor())
             let sprite = SKSpriteNode(texture: texture)
             shapeLayer.addChild(sprite)
             block.sprite = sprite
-            
             sprite.alpha = 0
+
             let moveAction = SKAction.move(to: pointForColumn(column: block.column, row: block.row), duration: TimeInterval(0.2))
             moveAction.timingMode = .easeOut
             let fadeInAction = SKAction.fadeAlpha(to: 0.7, duration: 0.4)

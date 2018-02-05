@@ -46,8 +46,8 @@ enum Orientation: Int, CustomStringConvertible {
 }
 
 class Shape: Hashable, CustomStringConvertible {
-
-    let color:BlockColor
+    
+    let block:String
 
     var blocks = Array<Block>()
 
@@ -79,21 +79,20 @@ class Shape: Hashable, CustomStringConvertible {
     
 
     var description:String {
-        return "\(color) block facing \(face): \(blocks[FirstBlockIdx]), \(blocks[SecondBlockIdx]), \(blocks[ThirdBlockIdx]), \(blocks[FourthBlockIdx])"
+        return "\(block) block facing \(face): \(blocks[FirstBlockIdx]), \(blocks[SecondBlockIdx]), \(blocks[ThirdBlockIdx]), \(blocks[FourthBlockIdx])"
     }
     
-    init(column:Int, row:Int, color: BlockColor, orientation:Orientation) {
-        self.color = color
+    init(column:Int, row:Int, orientation:Orientation) {
+        self.block = "red"
         self.column = column
         self.row = row
         self.face = orientation
         initializeBlocks()
         
     }
-    
 
     convenience init(column:Int, row:Int) {
-        self.init(column:column, row:row, color:BlockColor.random(), orientation:Orientation.random())
+        self.init(column:column, row:row, orientation:Orientation.random())
     }
     
     final func initializeBlocks() {
@@ -101,7 +100,7 @@ class Shape: Hashable, CustomStringConvertible {
             return
         }
         blocks = blockRowColumnTranslations.map { (diff) -> Block in
-            return Block(column: column + diff.columnDiff, row: row + diff.rowDiff, color: color)
+            return Block(column: column + diff.columnDiff, row: row + diff.rowDiff, color:blockColor)
         }
     }
     
