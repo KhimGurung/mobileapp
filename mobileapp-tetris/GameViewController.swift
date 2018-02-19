@@ -10,7 +10,17 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class GameViewController: UIViewController, UIGestureRecognizerDelegate, GameLogicDelegate{
+class GameViewController: UIViewController, UIGestureRecognizerDelegate, GameLogicDelegate, PopupViewDelegate {
+    
+    func resumeGame() {
+        
+        print("Hello Resume Game")
+        self.scene.startTicking()
+    }
+    
+    
+//    let popupViewController = PopupViewController()
+    
     func gameDidEnd(gamelogic: GameLogic){
         view.isUserInteractionEnabled = false
         scene.stopTicking()
@@ -83,7 +93,9 @@ class GameViewController: UIViewController, UIGestureRecognizerDelegate, GameLog
     
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
         // Configure the view.
         let skView = view as! SKView
         skView.isMultipleTouchEnabled = false
@@ -149,9 +161,15 @@ class GameViewController: UIViewController, UIGestureRecognizerDelegate, GameLog
     }
     
     @IBAction func pauseGame(_ sender: UIButton) {
+        
         self.scene.stopTicking()
-        performSegue(withIdentifier: "showPopup", sender: self)
-
+        //performSegue(withIdentifier: "showPopup", sender: self)
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+        let resumeTask = UIAlertAction(title: "RESUME", style: .default) { alertAction in
+            self.scene.startTicking()
+        }
+        alert.addAction(resumeTask)
+        self.present(alert, animated: true)
     }
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {

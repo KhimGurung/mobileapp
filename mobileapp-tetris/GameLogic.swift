@@ -154,9 +154,6 @@ class GameLogic {
         }
     }
     
-    
-    
-    
 
     
     func rotateShape() {

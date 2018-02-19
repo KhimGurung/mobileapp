@@ -8,9 +8,9 @@
 
 import UIKit
 
-var blockColor = ""
+var blockColor = "yellow"
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UINavigationControllerDelegate {
     
     var block = Block(column:0 , row:0, color:blockColor)
     
@@ -24,8 +24,14 @@ class HomeViewController: UIViewController {
     @IBAction func tapToPlay(_ sender: UIButton) {
         performSegue(withIdentifier: "showGameBoard", sender: self)
     }
+    
+    func navigationControllerSupportedInterfaceOrientations(_ navigationController: UINavigationController) -> UIInterfaceOrientationMask {
+            return UIInterfaceOrientationMask.portrait
+        }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         let blueTapGesture = UITapGestureRecognizer(target: self, action: #selector(HomeViewController.blueColorSelected))
         let yellowTapGesture = UITapGestureRecognizer(target: self, action: #selector(HomeViewController.yellowColorSelected))
@@ -40,6 +46,7 @@ class HomeViewController: UIViewController {
         self.orangeTap.addGestureRecognizer(orangeTapGesture)
         self.redTap.addGestureRecognizer(redTapGesture)
         self.purpleTap.addGestureRecognizer(purpleTapGesture)
+        
         
         // Do any additional setup after loading the view.
     }

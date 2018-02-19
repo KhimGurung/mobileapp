@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B063A7D203B433900BDE9DA /* PopupViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B063A7C203B433900BDE9DA /* PopupViewDelegate.swift */; };
 		2B071BC320122594002B6F6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B071BC220122594002B6F6B /* AppDelegate.swift */; };
 		2B071BC720122594002B6F6B /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2B071BC620122594002B6F6B /* Actions.sks */; };
 		2B071BC920122594002B6F6B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B071BC820122594002B6F6B /* GameScene.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B063A7C203B433900BDE9DA /* PopupViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewDelegate.swift; sourceTree = "<group>"; };
 		2B071BBF20122594002B6F6B /* mobileapp-tetris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mobileapp-tetris.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B071BC220122594002B6F6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B071BC620122594002B6F6B /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				2B071BD120122594002B6F6B /* LaunchScreen.storyboard */,
 				2B071BD420122594002B6F6B /* Info.plist */,
 				2B071C0A20124749002B6F6B /* GameLogic.swift */,
+				2B063A7C203B433900BDE9DA /* PopupViewDelegate.swift */,
 			);
 			path = "mobileapp-tetris";
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				2B071C0120122D91002B6F6B /* SquareShape.swift in Sources */,
 				2B071BCB20122594002B6F6B /* GameViewController.swift in Sources */,
 				2B071C0920122E97002B6F6B /* LShape.swift in Sources */,
+				2B063A7D203B433900BDE9DA /* PopupViewDelegate.swift in Sources */,
 				2B071BC320122594002B6F6B /* AppDelegate.swift in Sources */,
 				2B0EA879201F972300B8BBF8 /* GameEndViewController.swift in Sources */,
 				2B071BFD20122880002B6F6B /* JShape.swift in Sources */,

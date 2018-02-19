@@ -9,16 +9,29 @@
 import UIKit
 
 class PopupViewController: UIViewController {
-
-    var gamelogic: GameLogic!
-    var scene: GameScene!
-    var gameVC: GameViewController?
+//    var gamelogic: GameLogic!
+//    var scene: GameScene!
+//    var shape: Shape!
+//    var gameVC: GameViewController?
+    
+//    var delegate: PopupViewDelegate? = nil
+    
     @IBAction func popupTap(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
-        //gameVC?.didTick()
+     
+        print(self.childViewControllers)
+        print(self.parent)
+        print(self.inputViewController)
+        print(self.presentedViewController)
+        
+        print("Resume Game!!")
+//        print(self.delegate)
+//        self.delegate?.resumeGame()
+//        self.dismiss(animated: true, completion: nil)
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Hello Popup 123")
         // Do any additional setup after loading the view.
     }
 
