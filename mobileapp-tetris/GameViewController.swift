@@ -6,20 +6,10 @@
 //  Copyright © 2018 Khim Bahadur Gurung. All rights reserved.
 //  it will handle user input and communicationg between gamescene and a game logic class
 
-import UIKit
 import SpriteKit
-import GameplayKit
 
-class GameViewController: UIViewController, UIGestureRecognizerDelegate, GameLogicDelegate, PopupViewDelegate {
-    
-    func resumeGame() {
-        
-        print("Hello Resume Game")
-        self.scene.startTicking()
-    }
-    
-    
-//    let popupViewController = PopupViewController()
+class GameViewController: UIViewController, UIGestureRecognizerDelegate, GameLogicDelegate {
+
     
     func gameDidEnd(gamelogic: GameLogic){
         view.isUserInteractionEnabled = false
@@ -58,7 +48,6 @@ class GameViewController: UIViewController, UIGestureRecognizerDelegate, GameLog
     
     func gameShapeDidLand(gamelogic: GameLogic) {
         scene.stopTicking()
-        //nextShape()
         self.view.isUserInteractionEnabled = false
         let removedLines = gamelogic.removeCompletedLines()
         if removedLines.linesRemoved.count > 0 {
@@ -163,7 +152,7 @@ class GameViewController: UIViewController, UIGestureRecognizerDelegate, GameLog
     @IBAction func pauseGame(_ sender: UIButton) {
         
         self.scene.stopTicking()
-        //performSegue(withIdentifier: "showPopup", sender: self)
+        
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
         let resumeTask = UIAlertAction(title: "RESUME", style: .default) { alertAction in
             self.scene.startTicking()

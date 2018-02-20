@@ -54,10 +54,6 @@
                                 <rect key="frame" x="0.0" y="699" width="768" height="325"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="whitebg" translatesAutoresizingMaskIntoConstraints="NO" id="gwO-4c-qfA">
-                                <rect key="frame" x="525" y="707" width="202" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="whitebg" translatesAutoresizingMaskIntoConstraints="NO" id="S8c-cG-74x">
                                 <rect key="frame" x="524" y="627" width="202" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -69,16 +65,6 @@
                                 <state key="normal" title="PAUSE"/>
                                 <connections>
                                     <action selector="pauseGame:" destination="BV1-FR-VrT" eventType="touchUpInside" id="GXl-sa-2oK"/>
-                                    <segue destination="ExV-sL-me2" kind="presentation" identifier="showPopup" id="vwv-vj-6Eu"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yao-W2-uOw">
-                                <rect key="frame" x="516" y="701" width="210" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="32"/>
-                                <state key="normal" title="RESUME"/>
-                                <connections>
-                                    <action selector="resumeGame:" destination="BV1-FR-VrT" eventType="touchUpInside" id="TND-tl-LxY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -116,12 +102,12 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="321" y="29"/>
+            <point key="canvasLocation" x="440" y="29"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="I7O-YF-uKn">
             <objects>
-                <viewController id="fJX-4T-bmB" customClass="HomeViewController" customModule="mobileapp_tetris" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homecontroller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fJX-4T-bmB" customClass="HomeViewController" customModule="mobileapp_tetris" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fS3-W3-2Hk" customClass="UICollectionView">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -221,53 +207,6 @@
             </objects>
             <point key="canvasLocation" x="-319.53125" y="28.710937499999996"/>
         </scene>
-        <!--Popup View Controller-->
-        <scene sceneID="MBM-dv-6YK">
-            <objects>
-                <viewController definesPresentationContext="YES" modalPresentationStyle="formSheet" id="ExV-sL-me2" customClass="PopupViewController" customModule="mobileapp_tetris" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="9ia-Ub-Xsy">
-                        <rect key="frame" x="0.0" y="0.0" width="500" height="300"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="gCH-Ar-Rtc">
-                                <rect key="frame" x="0.0" y="0.0" width="500" height="368"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="whitebg" translatesAutoresizingMaskIntoConstraints="NO" id="WIQ-QD-gA3">
-                                <rect key="frame" x="53" y="132" width="174" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jVg-bc-aqa">
-                                <rect key="frame" x="52" y="144" width="182" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
-                                <state key="normal" title="RESUME"/>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="whitebg" translatesAutoresizingMaskIntoConstraints="NO" id="StQ-y9-RCT">
-                                <rect key="frame" x="289" y="132" width="162" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ds3-7r-yF8">
-                                <rect key="frame" x="284" y="144" width="182" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
-                                <state key="normal" title="END"/>
-                                <connections>
-                                    <segue destination="fJX-4T-bmB" kind="show" id="FNp-1A-wTt"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.17272597213738877" green="0.95523184537887573" blue="0.92380558616970543" alpha="0.17740426936619719" colorSpace="custom" customColorSpace="displayP3"/>
-                        <viewLayoutGuide key="safeArea" id="6fb-nB-ted"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="srE-6K-gSL"/>
-                    <value key="contentSizeForViewInPopover" type="size" width="500" height="300"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="69w-N6-jAE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Rn4-YT-bhP" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="1063" y="29"/>
-        </scene>
         <!--Game End View Controller-->
         <scene sceneID="dWK-Ff-21B">
             <objects>
@@ -293,8 +232,6 @@
                                     <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="popupTap:" destination="Rn4-YT-bhP" eventType="touchUpInside" id="hUD-Lp-U2G"/>
-                                    <action selector="tapResume:" destination="Rn4-YT-bhP" eventType="touchUpInside" id="w72-6y-82M"/>
                                     <segue destination="BV1-FR-VrT" kind="show" id="uS3-Vz-54s"/>
                                 </connections>
                             </button>
@@ -347,7 +284,6 @@
         <image name="yellow" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FNp-1A-wTt"/>
         <segue reference="wNG-LO-J8V"/>
     </inferredMetricsTieBreakers>
 </document>
